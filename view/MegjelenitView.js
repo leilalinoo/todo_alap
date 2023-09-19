@@ -17,8 +17,8 @@ class Megjelenit {
     
     
     let txt = "";
-    this.#lista.forEach((element) => {
-      new MegjelenitSor(element, this.tarolo)
+    this.#lista.forEach((element, index) => {
+      new MegjelenitSor(element, this.tarolo, index)
 /*
       txt += "<tr>";
       for (const key in element) {

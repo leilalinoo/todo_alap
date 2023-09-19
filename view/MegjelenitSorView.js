@@ -1,6 +1,6 @@
 class MegjelenitSor {
   #adat = {};
-  constructor(adat, szuloElem) {
+  constructor(adat, szuloElem, index) {
     this.#adat = adat;
     this.tablaElem = szuloElem;
     this.#sor();
@@ -10,6 +10,7 @@ class MegjelenitSor {
     this.torolElem = this.sorElem.children("td").children(".torol");
  //   console.log(this.pipaElem);
     this.pipaElem.on("click", () => {
+      console.log(this)
       this.sorElem.css("background-color", "lightgreen");
       this.megseElem.show();
       this.pipaElem.hide();
@@ -51,7 +52,7 @@ class MegjelenitSor {
   }
 
   #esemenyTrigger(esemeny) {
-    const esemenyem = new CustomEvent(esemeny, { detail: this });
+    const esemenyem = new CustomEvent(esemeny, { detail: this.index });
     window.dispatchEvent(esemenyem);
   }
 }

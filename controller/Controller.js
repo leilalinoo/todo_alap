@@ -20,7 +20,7 @@ class Controller {
     $(window).on("gyujtes", (event) => {
       //  MODEL.getList().push(event.detail);
         MODEL.ujAdat(event.detail)
-    //  console.log(TODOLIST2);
+     console.log(MODEL.getList());
       tarolo.empty();
       new Megjelenit(MODEL.getList(), tarolo);
     });
